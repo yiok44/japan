@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(135deg, #58b19f 50%, #f8a5c2 50%);
+    overflow-x: hidden;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-y: scroll;
+    height: 200vh; /* pentru a face site-ul lung */
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top left, #58b19f 0%, #f8a5c2 50%, #58b19f 100%);
+    z-index: -1;
+}
+
+.circle-decorative {
+    position: absolute;
+    top: 900px;
+    right: -10%;
+    width: 750px; /* făcând cercul mai mare */
+    height: 750px;
+    border-radius: 50%;
+    background-color: #58b19f;
+    z-index: -1;
+}
+
+.header {
+    background-color: #fc58a6;
+    padding: 50px;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 20px 0;
+    color: white;
+    transform: rotate(-10deg);
+    position: relative;
+    top: -50px;
+    font-size: 3em;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.photo-container {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.photo-container:hover img {
+    transform: scale(1.1);
+}
+
+.rectangle {
+    width: 40%;
+    height: 330px;
+}
+
+.rotate-right {
+    transform: rotate(10deg);
+}
+
+.rotate-left {
+    transform: rotate(-10deg);
+}
+
+.triangle {
+    width: 40%;
+    height: 0;
+    padding-bottom: 40%;
+    background: none;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: relative;
+}
+
+.triangle img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.circle {
+    width: 40%;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.footer {
+    margin-top: 50px;
+    color: white;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.music-link {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: -20px;
+    left: 70%;
+    transform: rotate(-10deg);
+}
+
+.music-link:hover {
+    background-color: #ddd;
+}
+
+.music-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.footer-text {
+    color: black;
+    position: absolute;
+    top: 70px;
+    left: 80%;
+    transform: rotate(0deg);
+}
+
+.icons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.instagram, .youtube {
+    border-radius: 15%;
+    background: white;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 9999;
+}
+
+.overlay img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
